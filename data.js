@@ -21,12 +21,12 @@ const destinations = {
       badge: "Most Popular",
       image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=700&q=85",
       photos: [
-        "Images/Goa1.jpg",
-        "Images/Goa2.jpg",
-        "Images/Goa3.jpg",
-        "Images/Goa4.jpg",
-        "Images/Goa5.jpg",
-        "Images/Goa6.jpg"
+        "Images/India/Goa1.jpg",
+        "Images/India/Goa2.jpg",
+        "Images/India/Goa3.jpg",
+        "Images/India/Goa4.jpg",
+        "Images/India/Goa5.jpg",
+        "Images/India/Goa6.jpg"
       ],
       description: "India's favourite coastal escape — Goa is sun-drenched beaches, Portuguese heritage, and vibrant nightlife. Whether you're chasing surf, history, or pure relaxation, Goa delivers.",
       attractions: [
@@ -49,12 +49,12 @@ const destinations = {
       badge: "Editor's Pick",
       image: "Images/Coorg.jpg",
       photos: [
-        "Images/Coorg1.jpg",
-        "Images/Coorg2.jpg",
-        "Images/Coorg3.jpg",
-        "Images/Coorg4.jpg",
-        "Images/Coorg5.jpg",
-        "Images/Coorg6.jpg"
+        "Images/India/Coorg1.jpg",
+        "Images/India/Coorg2.jpg",
+        "Images/India/Coorg3.jpg",
+        "Images/India/Coorg4.jpg",
+        "Images/India/Coorg5.jpg",
+        "Images/India/Coorg6.jpg"
       ],
       description: "Nestled in the Western Ghats, Coorg (Kodagu) is Karnataka's hill station jewel — lush coffee and spice plantations, misty mornings, and the warmth of Kodava culture.",
       attractions: [
@@ -77,12 +77,12 @@ const destinations = {
       badge: "Trending",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=85",
       photos: [
-        "Images/Manali1.jpg",
-        "Images/Manali2.jpg",
-        "Images/Manali3.jpg",
-        "Images/Manali4.jpg",
-        "Images/Manali5.jpg",
-        "Images/Manali6.jpg"
+        "Images/India/Manali1.jpg",
+        "Images/India/Manali2.jpg",
+        "Images/India/Manali3.jpg",
+        "Images/India/Manali4.jpg",
+        "Images/India/Manali5.jpg",
+        "Images/India/Manali6.jpg"
       ],
       description: "High in Himachal Pradesh, Manali is where adventure meets breathtaking landscapes. Snow-capped peaks, pine forests, ancient temples, and the thrill of high-altitude roads await.",
       attractions: [
@@ -105,12 +105,12 @@ const destinations = {
       badge: "God's Own Country",
       image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=700&q=85",
       photos: [
-        "Images/Kerala1.jpg",
-        "Images/Kerala2.jpg",
-        "Images/Kerala3.jpg",
-        "Images/Kerala4.jpg",
-        "Images/Kerala5.jpg",
-        "Images/Kerala6.jpg"
+        "Images/India/Kerala1.jpg",
+        "Images/India/Kerala2.jpg",
+        "Images/India/Kerala3.jpg",
+        "Images/India/Kerala4.jpg",
+        "Images/India/Kerala5.jpg",
+        "Images/India/Kerala6.jpg"
       ],
       description: "Kerala — God's Own Country — is a land of backwaters, hill stations, Ayurveda, and golden beaches. A houseboat glide through Alleppey is the stuff of dreams.",
       attractions: [
@@ -133,12 +133,12 @@ const destinations = {
       badge: "Classic Escape",
       image: "Images/Ooty.jpg",
       photos: [
-        "Images/Ooty1.jpg",
-        "Images/Ooty2.jpg",
-        "Images/Ooty3.jpg",
-        "Images/Ooty4.jpg",
-        "Images/Ooty5.jpg",
-        "Images/Ooty6.jpg"
+        "Images/India/Ooty1.jpg",
+        "Images/India/Ooty2.jpg",
+        "Images/India/Ooty3.jpg",
+        "Images/India/Ooty4.jpg",
+        "Images/India/Ooty5.jpg",
+        "Images/India/Ooty6.jpg"
       ],
       description: "The 'Queen of Hill Stations' in the Nilgiris, Ooty charms with its toy train, rose gardens, sprawling tea estates, and cool misty mornings that feel like a different world.",
       attractions: [
@@ -161,12 +161,12 @@ const destinations = {
     badge: "Island Escape",
     image: "Images/Andaman0.jpg",
     photos: [
-      "Images/Andaman1.jpg",
-      "Images/Andaman2.jpg",
-      "Images/Andaman3.jpg",
-      "Images/Andaman4.jpg",
-      "Images/Andaman5.jpg",
-      "Images/Andaman6.jpg"
+      "Images/India/Andaman1.jpg",
+      "Images/India/Andaman2.jpg",
+      "Images/India/Andaman3.jpg",
+      "Images/India/Andaman4.jpg",
+      "Images/India/Andaman5.jpg",
+      "Images/India/Andaman6.jpg"
     ],
     description: "A slice of tropical heaven in the Bay of Bengal, the Andaman Islands are known for crystal-clear waters, white sand beaches, coral reefs, lush forests, and unforgettable sunsets perfect for both adventure lovers and peaceful escapes.",
     attractions: [
