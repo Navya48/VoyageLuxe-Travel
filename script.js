@@ -177,23 +177,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ── ENQUIRY FORM ── */
 
+/* ── ENQUIRY FORM ── */
+
 const form = document.getElementById('enquiryForm');
 
-if(form){
-
-  form.addEventListener('submit', function(e){
-
+if (form) {
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const name = form.querySelector('[name="name"]').value.trim();
-    const phone = form.querySelector('[name="phone"]').value.trim();
-    const dest = form.querySelector('[name="destination"]').value || 'a destination';
-    const checkin = form.querySelector('[name="checkin"]').value || 'flexible dates';
-    const guests = form.querySelector('[name="guests"]').value || '';
-    const message = form.querySelector('[name="message"]').value.trim();
-    const email = form.querySelector('[name="email"]').value.trim();
-
-    /* WHATSAPP MESSAGE */
+    const name     = form.querySelector('[name="name"]').value.trim();
+    const phone    = form.querySelector('[name="phone"]').value.trim();
+    const dest     = form.querySelector('[name="destination"]').value || 'a destination';
+    const checkin  = form.querySelector('[name="checkin"]').value || 'flexible dates';
+    const guests   = form.querySelector('[name="guests"]').value || '';
+    const message  = form.querySelector('[name="message"]').value.trim();
+    const email    = form.querySelector('[name="email"]').value.trim();
 
     const waText =
 `Hi VoyageLuxe! 👋
@@ -208,54 +206,47 @@ I'd like to plan a stay.
 *Guests:* ${guests}
 ${message ? `*Message:* ${message}` : ''}`;
 
-    window.open(
-      `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
-      '_blank'
-    );
+    const msg = document.getElementById('formMsg');
 
-    /* EMAILJS */
-
+    // 1️⃣ Send email FIRST, open WhatsApp only after it succeeds
     emailjs.send("service_yzc9ib7", "template_dhn0y3e", {
-    name: name,
-    phone: phone,
-    email: email,
-    destination: dest,
-    checkin: checkin,
-    guests: guests,
-    message: message
-  })
+      name:        name,
+      phone:       phone,
+      email:       email,
+      destination: dest,
+      checkin:     checkin,
+      guests:      guests,
+      message:     message
+    })
+    .then(() => {
+      // 2️⃣ Email sent — now open WhatsApp once
+      window.open(
+        `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
+        '_blank'
+      );
 
-  .then(() => {
+      msg.textContent = '✓ WhatsApp opened and enquiry email sent successfully!';
+      msg.className = 'form-msg show';
+      form.reset();
 
-  window.open(
-    `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
-    '_blank'
-  );
+      setTimeout(() => msg.classList.remove('show'), 5000);
+    })
+    .catch((error) => {
+      console.error('EmailJS ERROR:', error);
 
-  const msg = document.getElementById('formMsg');
+      // 3️⃣ Email failed — still open WhatsApp so the lead isn't lost
+      window.open(
+        `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
+        '_blank'
+      );
 
-  msg.textContent =
-  "✓ WhatsApp opened and enquiry email sent successfully!";
-
-    msg.className = 'form-msg show';
-
-    form.reset();
-
-    setTimeout(() => {
-      msg.classList.remove('show');
-    }, 5000);
-
-  })
-
-      .catch((error) => {
-
-      console.error("EMAIL ERROR:", error);
-      alert("Email failed. Check console.");
-      });
-
+      msg.textContent = '⚠️ WhatsApp opened, but email failed. Please check your EmailJS setup.';
+      msg.className = 'form-msg show';
+      setTimeout(() => msg.classList.remove('show'), 6000);
     });
 
-  }
+  });
+}
 
   /* ── SMOOTH SCROLL ── */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
