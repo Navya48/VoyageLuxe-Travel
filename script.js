@@ -175,32 +175,82 @@ document.addEventListener('DOMContentLoaded', () => {
   modalBackdrop.addEventListener('click', e => { if (e.target === modalBackdrop) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  /* ── ENQUIRY FORM ── */
-  const form = document.getElementById('enquiryForm');
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const name = form.querySelector('[name="name"]').value.trim();
-      const phone = form.querySelector('[name="phone"]').value.trim();
-      const dest = form.querySelector('[name="destination"]').value || 'a destination';
-      const checkin = form.querySelector('[name="checkin"]').value || 'flexible dates';
-      const guests = form.querySelector('[name="guests"]').value || '';
-      const message = form.querySelector('[name="message"]').value.trim();
+/* ── ENQUIRY FORM ── */
 
-      const waText = `Hi VoyageLuxe! 👋\n\nI'd like to plan a stay.\n\n` +
-        `*Name:* ${name}\n*Phone:* ${phone}\n*Destination:* ${dest}\n` +
-        `*Check-in:* ${checkin}\n*Guests:* ${guests}` +
-        (message ? `\n*Message:* ${message}` : '');
+const form = document.getElementById('enquiryForm');
 
-      window.open(`https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`, '_blank');
+if(form){
+
+  form.addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    const name = form.querySelector('[name="name"]').value.trim();
+    const phone = form.querySelector('[name="phone"]').value.trim();
+    const dest = form.querySelector('[name="destination"]').value || 'a destination';
+    const checkin = form.querySelector('[name="checkin"]').value || 'flexible dates';
+    const guests = form.querySelector('[name="guests"]').value || '';
+    const message = form.querySelector('[name="message"]').value.trim();
+    const email = form.querySelector('[name="email"]').value.trim();
+
+    /* WHATSAPP MESSAGE */
+
+    const waText =
+`Hi VoyageLuxe! 👋
+
+I'd like to plan a stay.
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Email:* ${email}
+*Destination:* ${dest}
+*Check-in:* ${checkin}
+*Guests:* ${guests}
+${message ? `*Message:* ${message}` : ''}`;
+
+    window.open(
+      `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
+      '_blank'
+    );
+
+    /* EMAILJS */
+
+    emailjs.send("service_yzc9ib7", "template_dhn0y3e", {
+      name: name,
+      phone: phone,
+      email: email,
+      destination: dest,
+      checkin: checkin,
+      guests: guests,
+      message: message
+    })
+
+    .then(() => {
 
       const msg = document.getElementById('formMsg');
-      msg.textContent = '✓ WhatsApp opened with your details! We\'ll reply within 2 hours.';
+
+      msg.textContent =
+      "✓ WhatsApp opened and enquiry email sent successfully!";
+
       msg.className = 'form-msg show';
+
       form.reset();
-      setTimeout(() => msg.classList.remove('show'), 5000);
+
+      setTimeout(() => {
+        msg.classList.remove('show');
+      }, 5000);
+
+    })
+
+    .catch((error) => {
+
+      console.log(error);
+
     });
-  }
+
+  });
+
+}
 
   /* ── SMOOTH SCROLL ── */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
