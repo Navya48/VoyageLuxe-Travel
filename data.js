@@ -21,12 +21,12 @@ const destinations = {
       badge: "Most Popular",
       image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=700&q=85",
       photos: [
-        "images/Goa1.jpg",
-        "images/Goa2.jpg",
-        "images/Goa3.jpg",
-        "images/Goa4.jpg",
-        "images/Goa5.jpg",
-        "images/Goa6.jpg"
+        "Images/Goa1.jpg",
+        "Images/Goa2.jpg",
+        "Images/Goa3.jpg",
+        "Images/Goa4.jpg",
+        "Images/Goa5.jpg",
+        "Images/Goa6.jpg"
       ],
       description: "India's favourite coastal escape — Goa is sun-drenched beaches, Portuguese heritage, and vibrant nightlife. Whether you're chasing surf, history, or pure relaxation, Goa delivers.",
       attractions: [
@@ -47,14 +47,14 @@ const destinations = {
       name: "Coorg",
       tagline: "Misty hills & coffee",
       badge: "Editor's Pick",
-      image: "images/Coorg.jpg",
+      image: "Images/Coorg.jpg",
       photos: [
-        "images/Coorg1.jpg",
-        "images/Coorg2.jpg",
-        "images/Coorg3.jpg",
-        "images/Coorg4.jpg",
-        "images/Coorg5.jpg",
-        "images/Coorg6.jpg"
+        "Images/Coorg1.jpg",
+        "Images/Coorg2.jpg",
+        "Images/Coorg3.jpg",
+        "Images/Coorg4.jpg",
+        "Images/Coorg5.jpg",
+        "Images/Coorg6.jpg"
       ],
       description: "Nestled in the Western Ghats, Coorg (Kodagu) is Karnataka's hill station jewel — lush coffee and spice plantations, misty mornings, and the warmth of Kodava culture.",
       attractions: [
@@ -77,12 +77,12 @@ const destinations = {
       badge: "Trending",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=85",
       photos: [
-        "images/Manali1.jpg",
-        "images/Manali2.jpg",
-        "images/Manali3.jpg",
-        "images/Manali4.jpg",
-        "images/Manali5.jpg",
-        "images/Manali6.jpg"
+        "Images/Manali1.jpg",
+        "Images/Manali2.jpg",
+        "Images/Manali3.jpg",
+        "Images/Manali4.jpg",
+        "Images/Manali5.jpg",
+        "Images/Manali6.jpg"
       ],
       description: "High in Himachal Pradesh, Manali is where adventure meets breathtaking landscapes. Snow-capped peaks, pine forests, ancient temples, and the thrill of high-altitude roads await.",
       attractions: [
@@ -105,12 +105,12 @@ const destinations = {
       badge: "God's Own Country",
       image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=700&q=85",
       photos: [
-        "images/Kerala1.jpg",
-        "images/Kerala2.jpg",
-        "images/Kerala3.jpg",
-        "images/Kerala4.jpg",
-        "images/Kerala5.jpg",
-        "images/Kerala6.jpg"
+        "Images/Kerala1.jpg",
+        "Images/Kerala2.jpg",
+        "Images/Kerala3.jpg",
+        "Images/Kerala4.jpg",
+        "Images/Kerala5.jpg",
+        "Images/Kerala6.jpg"
       ],
       description: "Kerala — God's Own Country — is a land of backwaters, hill stations, Ayurveda, and golden beaches. A houseboat glide through Alleppey is the stuff of dreams.",
       attractions: [
@@ -131,14 +131,14 @@ const destinations = {
       name: "Ooty",
       tagline: "Queen of hill stations",
       badge: "Classic Escape",
-      image: "images/Ooty.jpg",
+      image: "Images/Ooty.jpg",
       photos: [
-        "images/Ooty1.jpg",
-        "images/Ooty2.jpg",
-        "images/Ooty3.jpg",
-        "images/Ooty4.jpg",
-        "images/Ooty5.jpg",
-        "images/Ooty6.jpg"
+        "Images/Ooty1.jpg",
+        "Images/Ooty2.jpg",
+        "Images/Ooty3.jpg",
+        "Images/Ooty4.jpg",
+        "Images/Ooty5.jpg",
+        "Images/Ooty6.jpg"
       ],
       description: "The 'Queen of Hill Stations' in the Nilgiris, Ooty charms with its toy train, rose gardens, sprawling tea estates, and cool misty mornings that feel like a different world.",
       attractions: [
