@@ -216,41 +216,46 @@ ${message ? `*Message:* ${message}` : ''}`;
     /* EMAILJS */
 
     emailjs.send("service_yzc9ib7", "template_dhn0y3e", {
-      name: name,
-      phone: phone,
-      email: email,
-      destination: dest,
-      checkin: checkin,
-      guests: guests,
-      message: message
-    })
+    name: name,
+    phone: phone,
+    email: email,
+    destination: dest,
+    checkin: checkin,
+    guests: guests,
+    message: message
+  })
 
-    .then(() => {
+  .then(() => {
 
-      const msg = document.getElementById('formMsg');
+    window.open(
+      `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
+      '_blank'
+    );
 
-      msg.textContent =
-      "✓ WhatsApp opened and enquiry email sent successfully!";
+    const msg = document.getElementById('formMsg');
 
-      msg.className = 'form-msg show';
+    msg.textContent =
+    "✓ WhatsApp opened and enquiry email sent successfully!";
 
-      form.reset();
+    msg.className = 'form-msg show';
 
-      setTimeout(() => {
-        msg.classList.remove('show');
-      }, 5000);
+    form.reset();
 
-    })
+    setTimeout(() => {
+      msg.classList.remove('show');
+    }, 5000);
 
-    .catch((error) => {
+  })
 
-      console.log(error);
+      .catch((error) => {
+
+        console.log(error);
+
+      });
 
     });
 
-  });
-
-}
+  }
 
   /* ── SMOOTH SCROLL ── */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
