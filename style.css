@@ -73,6 +73,25 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   font-weight: 500 !important;
   transition: background .2s, transform .2s !important;
 }
+.logo-icon img{
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 640px){
+
+  .logo{
+    font-size: 1.3rem;
+  }
+
+  .logo-icon img{
+    width: 36px;
+    height: 36px;
+  }
+
+}
 .nav-cta:hover { background: var(--gold-dark) !important; transform: translateY(-1px); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; margin-left: 20px; }
 .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background .3s; }
@@ -155,7 +174,7 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 
 .plane2d{
   position: absolute;
-  font-size: 25px;
+  font-size: 15px;
   color: rgba(255,255,255,0.85);
   line-height: 1;
   white-space: nowrap;
@@ -368,34 +387,103 @@ h3 { font-size: 1.25rem; font-weight: 400; }
 .modal-wa-btn:hover { background: var(--wa-dark); transform: translateY(-2px); }
 
 /* ── HOW IT WORKS ── */
-.how-section { background: var(--ink); }
-.how-section .section-head h2 { color: #fff; }
-.how-section .eyebrow { color: var(--gold); }
-.steps-grid {
-  display: flex; align-items: center; gap: 0;
-  justify-content: center;
-}
-.step-card {
-  flex: 1; max-width: 280px; text-align: center; padding: 40px 28px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--r-lg); position: relative;
-  transition: background .3s, transform .3s;
-}
-.step-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
-.step-icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
-.step-num {
-  position: absolute; top: 16px; right: 20px;
-  font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300;
-  color: rgba(255,255,255,0.06); line-height: 1;
-}
-.step-card h3 { color: #fff; font-size: 1.1rem; margin-bottom: 10px; }
-.step-card p { color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.7; }
-.step-connector {
-  font-size: 1.8rem; color: var(--gold); margin: 0 -8px; z-index: 1;
-  opacity: 0.4; flex-shrink: 0;
+.how-section {
+  background: var(--ink);
 }
 
+.how-section .section-head h2 {
+  color: #fff;
+}
+
+.how-section .eyebrow {
+  color: var(--gold);
+}
+
+.steps-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  flex: 1;
+  max-width: 280px;
+  text-align: center;
+  padding: 40px 28px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-lg);
+  position: relative;
+  transition: background .3s, transform .3s;
+}
+
+.step-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.step-icon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.step-num {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+}
+
+.step-card h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.step-connector {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin: 0 -8px;
+  z-index: 1;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .steps-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .step-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .step-connector {
+    transform: rotate(90deg);
+    margin: -5px 0;
+  }
+
+  .section-head.center {
+    text-align: center;
+  }
+}
 /* ── ABOUT ── */
 .about-section { background: var(--cream); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
@@ -622,4 +710,18 @@ h3 { font-size: 1.25rem; font-weight: 400; }
   .stat-divider { height: 24px; }
   .modal-photos { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 56px 0; }
+}
+@media (max-width: 640px) {
+
+  .nav-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger{
+    display: flex;
+    margin-left: auto;
+  }
+
 }
