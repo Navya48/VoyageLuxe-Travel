@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSlide = 0;
   let slideInterval;
 
-  // Create dots
   slides.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -46,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   startSlider();
 
-  // Pause on hover
   const hero = document.querySelector('.hero');
   hero.addEventListener('mouseenter', () => clearInterval(slideInterval));
   hero.addEventListener('mouseleave', startSlider);
@@ -71,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
 
-    // Click to open modal
     container.querySelectorAll('.dest-card').forEach(card => {
       card.addEventListener('click', () => {
         const name = card.dataset.name;
@@ -106,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalClose = document.getElementById('modalClose');
 
   function openModal(dest) {
-    // Hero
     modalHero.innerHTML = `
       <img src="${dest.image}" alt="${dest.name}" class="modal-hero-img"
            onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'">
@@ -118,26 +114,18 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    // Photos
     const photoHtml = dest.photos.slice(0,6).map(p => `
       <img src="${p}" class="modal-photo" loading="lazy" alt="${dest.name}"
            onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80'">
     `).join('');
 
-    // Attractions
     const attractHtml = dest.attractions.map(a => `<li>${a}</li>`).join('');
-
-    // Food
     const foodHtml = dest.food.map(f => `<span class="food-tag">${f}</span>`).join('');
-
-    // Stay types
     const stayHtml = dest.stay_types.map(s => `<li>${s}</li>`).join('');
 
     modalBody.innerHTML = `
       <p style="font-size:15px;color:#555;margin-bottom:22px;line-height:1.75">${dest.description}</p>
-
       <div class="modal-photos">${photoHtml}</div>
-
       <div class="modal-sections">
         <div class="modal-section">
           <h4>🗺️ Top Attractions</h4>
@@ -148,12 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <ul class="modal-list">${stayHtml}</ul>
         </div>
       </div>
-
       <div class="modal-section" style="margin-bottom:22px">
         <h4>🍽️ Must-Try Food & Drink</h4>
         <div class="modal-food-tags">${foodHtml}</div>
       </div>
-
       <div class="modal-cta">
         <a href="https://wa.me/${SITE_CONFIG.whatsapp}?text=Hi%2C+I%27d+like+to+plan+a+trip+to+${encodeURIComponent(dest.name)}"
            class="modal-wa-btn" target="_blank">
@@ -175,26 +161,22 @@ document.addEventListener('DOMContentLoaded', () => {
   modalBackdrop.addEventListener('click', e => { if (e.target === modalBackdrop) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-/* ── ENQUIRY FORM ── */
+  /* ── ENQUIRY FORM ── */
+  const form = document.getElementById('enquiryForm');
 
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-/* ── ENQUIRY FORM ── */
+      const name    = form.querySelector('[name="name"]').value.trim();
+      const phone   = form.querySelector('[name="phone"]').value.trim();
+      const dest    = form.querySelector('[name="destination"]').value || 'a destination';
+      const checkin = form.querySelector('[name="checkin"]').value || 'flexible dates';
+      const guests  = form.querySelector('[name="guests"]').value || '';
+      const message = form.querySelector('[name="message"]').value.trim();
+      const email   = form.querySelector('[name="email"]').value.trim();
 
-const form = document.getElementById('enquiryForm');
-
-if (form) {
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const name     = form.querySelector('[name="name"]').value.trim();
-    const phone    = form.querySelector('[name="phone"]').value.trim();
-    const dest     = form.querySelector('[name="destination"]').value || 'a destination';
-    const checkin  = form.querySelector('[name="checkin"]').value || 'flexible dates';
-    const guests   = form.querySelector('[name="guests"]').value || '';
-    const message  = form.querySelector('[name="message"]').value.trim();
-    const email    = form.querySelector('[name="email"]').value.trim();
-
-    const waText =
+      const waText =
 `Hi VoyageLuxe! 👋
 
 I'd like to plan a stay.
@@ -207,32 +189,31 @@ I'd like to plan a stay.
 *Guests:* ${guests}
 ${message ? `*Message:* ${message}` : ''}`;
 
-    // ✅ Open WhatsApp FIRST — synchronously, directly inside the click handler
-    // Browsers only allow window.open() without blocking during a direct user gesture
-    window.open(
-      `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
-      '_blank'
-    );
+      // ✅ Open WhatsApp synchronously (must be inside the click handler, before any async call)
+      window.open(
+        `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
+        '_blank'
+      );
 
-    // ✅ Then send email in the background — no waiting, no blocking
-    emailjs.send("service_yzc9ib7", "template_dhn0y3e", {
-      name, phone, email,
-      destination: dest,
-      checkin, guests, message
-    })
-    .then(() => {
-      const msg = document.getElementById('formMsg');
-      msg.textContent = '✓ Enquiry sent via WhatsApp & email!';
-      msg.className = 'form-msg show';
-      form.reset();
-      setTimeout(() => msg.classList.remove('show'), 5000);
-    })
-    .catch((err) => {
-      console.error('EmailJS error:', err);
+      // ✅ Send email in the background
+      emailjs.send("service_yzc9ib7", "template_dhn0y3e", {
+        name, phone, email,
+        destination: dest,
+        checkin, guests, message
+      })
+      .then(() => {
+        const msg = document.getElementById('formMsg');
+        msg.textContent = '✓ Enquiry sent via WhatsApp & email!';
+        msg.className = 'form-msg show';
+        form.reset();
+        setTimeout(() => msg.classList.remove('show'), 5000);
+      })
+      .catch((err) => {
+        console.error('EmailJS error:', err);
+      });
+
     });
-
-  });
-}
+  }
 
   /* ── SMOOTH SCROLL ── */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
