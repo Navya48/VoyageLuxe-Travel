@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ── ENQUIRY FORM ── */
 
+
 /* ── ENQUIRY FORM ── */
 
 const form = document.getElementById('enquiryForm');
@@ -206,43 +207,28 @@ I'd like to plan a stay.
 *Guests:* ${guests}
 ${message ? `*Message:* ${message}` : ''}`;
 
-    const msg = document.getElementById('formMsg');
+    // ✅ Open WhatsApp FIRST — synchronously, directly inside the click handler
+    // Browsers only allow window.open() without blocking during a direct user gesture
+    window.open(
+      `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
+      '_blank'
+    );
 
-    // 1️⃣ Send email FIRST, open WhatsApp only after it succeeds
+    // ✅ Then send email in the background — no waiting, no blocking
     emailjs.send("service_yzc9ib7", "template_dhn0y3e", {
-      name:        name,
-      phone:       phone,
-      email:       email,
+      name, phone, email,
       destination: dest,
-      checkin:     checkin,
-      guests:      guests,
-      message:     message
+      checkin, guests, message
     })
     .then(() => {
-      // 2️⃣ Email sent — now open WhatsApp once
-      window.open(
-        `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
-        '_blank'
-      );
-
-      msg.textContent = '✓ WhatsApp opened and enquiry email sent successfully!';
+      const msg = document.getElementById('formMsg');
+      msg.textContent = '✓ Enquiry sent via WhatsApp & email!';
       msg.className = 'form-msg show';
       form.reset();
-
       setTimeout(() => msg.classList.remove('show'), 5000);
     })
-    .catch((error) => {
-      console.error('EmailJS ERROR:', error);
-
-      // 3️⃣ Email failed — still open WhatsApp so the lead isn't lost
-      window.open(
-        `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
-        '_blank'
-      );
-
-      msg.textContent = '⚠️ WhatsApp opened, but email failed. Please check your EmailJS setup.';
-      msg.className = 'form-msg show';
-      setTimeout(() => msg.classList.remove('show'), 6000);
+    .catch((err) => {
+      console.error('EmailJS error:', err);
     });
 
   });
