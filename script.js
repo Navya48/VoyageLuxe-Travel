@@ -227,15 +227,15 @@ ${message ? `*Message:* ${message}` : ''}`;
 
   .then(() => {
 
-    window.open(
-      `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
-      '_blank'
-    );
+  window.open(
+    `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`,
+    '_blank'
+  );
 
-    const msg = document.getElementById('formMsg');
+  const msg = document.getElementById('formMsg');
 
-    msg.textContent =
-    "✓ WhatsApp opened and enquiry email sent successfully!";
+  msg.textContent =
+  "✓ WhatsApp opened and enquiry email sent successfully!";
 
     msg.className = 'form-msg show';
 
@@ -249,8 +249,8 @@ ${message ? `*Message:* ${message}` : ''}`;
 
       .catch((error) => {
 
-        console.log(error);
-
+      console.error("EMAIL ERROR:", error);
+      alert("Email failed. Check console.");
       });
 
     });
