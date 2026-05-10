@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoyageLuxe — Handpicked Stays Across India & Beyond</title>
+  <meta name="description" content="Curated villas, homestays, resorts and hotels across India and the world's most breathtaking destinations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919035545910?text=Hi%2C+I%27d+like+to+plan+a+stay" class="wa-float" target="_blank">
+    <div class="wa-ring"></div>
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-icon">✈</span>
+        Voyage<em>Luxe</em>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="https://wa.me/919035545910?text=Hi%2C+I%27d+like+to+plan+a+stay" class="nav-cta" target="_blank">
+            Plan My Trip
+          </a>
+        </li>
+      </ul>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <!-- Slideshow -->
+    <div class="slide-track" id="slideTrack">
+      <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-label"><span class="slide-flag">🇮🇩</span>Bali, Indonesia</div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-label"><span class="slide-flag">🇦🇪</span>Dubai, UAE</div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-label"><span class="slide-flag">🇯🇵</span>Kyoto, Japan</div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1600&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-label"><span class="slide-flag">🇹🇭</span>Phuket, Thailand</div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1600&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-label"><span class="slide-flag">🇮🇳</span>Goa, India</div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=1600&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-label"><span class="slide-flag">🇻🇳</span>Hội An, Vietnam</div>
+      </div>
+      <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&q=85')">
+        <div class="slide-overlay"></div>
+        <div class="slide-label"><span class="slide-flag">🇸🇬</span>Singapore</div>
+      </div>
+      <div class="slide" style="background-image:url('Images/Andaman.jpg')">
+        <div class="slide-overlay"></div>
+        <div class="slide-label"><span class="slide-flag">IN</span>Andaman Islands</div>
+      </div>
+    </div>
+
+    <!-- Slideshow dots -->
+    <div class="slide-dots" id="slideDots"></div>
+
+    <!-- Hero Content -->
+<div class="hero-content">
+
+  <div class="hero-heading-wrapper">
+
+    <!-- Top Plane -->
+    <div class="plane-track plane-track-top">
+      <span class="plane2d plane-ltr">✈</span>
+    </div>
+
+    <h1>
+      Your World.<br>
+      <em>Your Perfect Stay.</em>
+    </h1>
+
+    <!-- Bottom Plane -->
+    <div class="plane-track plane-track-bottom">
+      <span class="plane2d plane-rtl">✈</span>
+    </div>
+
+  </div>
+
+</div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-lbl">Stays Planned</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><div class="stat-num">12+</div><div class="stat-lbl">Destinations</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-lbl">Guest Rating</div></div>
+    <div class="stat-divider"></div>
+    <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-lbl">WhatsApp Support</div></div>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section class="section" id="destinations">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Where do you want to go?</span>
+        <h2>Our Destinations</h2>
+        <p>Each destination is handpicked — we know every corner of these places.</p>
+      </div>
+
+      <div class="dest-tabs">
+        <button class="dest-tab active" data-tab="india">🇮🇳 India</button>
+        <button class="dest-tab" data-tab="international">✈️ International</button>
+      </div>
+
+      <div class="dest-grid" id="indiaGrid"></div>
+      <div class="dest-grid" id="intlGrid" style="display:none"></div>
+    </div>
+  </section>
+
+  <!-- DESTINATION DETAIL MODAL -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="dest-modal" id="destModal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-hero" id="modalHero"></div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section how-section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Simple & Personal</span>
+        <h2>How VoyageLuxe Works</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-icon">💬</div>
+          <div class="step-num">01</div>
+          <h3>Tell Us Your Dream</h3>
+          <p>Chat with us on WhatsApp or fill the contact form. Share your destination, dates, and vibe.</p>
+        </div>
+        <div class="step-connector">→</div>
+        <div class="step-card">
+          <div class="step-icon">🏡</div>
+          <div class="step-num">02</div>
+          <h3>We Curate Options</h3>
+          <p>Our team handpicks the best stays — villas, homestays, resorts — matched to your taste.</p>
+        </div>
+        <div class="step-connector">→</div>
+        <div class="step-card">
+          <div class="step-icon">✈️</div>
+          <div class="step-num">03</div>
+          <h3>Arrive & Enjoy</h3>
+          <p>We handle all bookings & confirmations. You just show up and experience something unforgettable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-imgs">
+          <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80" class="about-img-main" alt="Luxury villa">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" class="about-img-sm" alt="Mountains">
+          <div class="about-badge-float">
+            <span class="badge-num">500+</span>
+            <span class="badge-txt">Happy travellers</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="eyebrow">Who We Are</span>
+          <h2>Travel Curated With Heart</h2>
+          <p>VoyageLuxe is a boutique travel curation service based in Bengaluru. We personally vet every stay we recommend — no algorithms, no random listings. Just honest, human recommendations.</p>
+          <p>Whether it's a private pool villa in Goa, a misty treehouse in Coorg, or a luxury retreat in Bali — we find you the perfect home away from home.</p>
+          <div class="about-pillars">
+            <div class="pillar"><span>🌿</span> Handpicked stays only</div>
+            <div class="pillar"><span>💰</span> Best price guarantee</div>
+            <div class="pillar"><span>📱</span> WhatsApp support 24/7</div>
+            <div class="pillar"><span>🔒</span> Secure & transparent booking</div>
+          </div>
+          <a href="https://wa.me/919035545910?text=Hi%2C+tell+me+more+about+VoyageLuxe" class="btn-accent" target="_blank">Talk to Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES OF STAY -->
+  <section class="section types-section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">What kind of stay?</span>
+        <h2>Find Your Style</h2>
+      </div>
+      <div class="types-grid">
+        <div class="type-card">
+          <div class="type-img"><img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=500&q=80" alt="Villa"></div>
+          <div class="type-label">Villas</div>
+          <p>Private pools, exclusive spaces, total luxury</p>
+        </div>
+        <div class="type-card">
+          <div class="type-img"><img src="https://images.unsplash.com/photo-1596178060810-72f53ce9a65c?w=500&q=80" alt="Homestay"></div>
+          <div class="type-label">Homestays</div>
+          <p>Authentic local living with real warmth</p>
+        </div>
+        <div class="type-card">
+          <div class="type-img"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=500&q=80" alt="Resort"></div>
+          <div class="type-label">Resorts</div>
+          <p>World-class amenities in paradise settings</p>
+        </div>
+        <div class="type-card">
+          <div class="type-img"><img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=500&q=80" alt="Hotels"></div>
+          <div class="type-label">Boutique Hotels</div>
+          <p>Curated character, comfort, and culture</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testi-section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Real guests, real stories</span>
+        <h2>What Our Guests Say</h2>
+      </div>
+      <div class="testi-track-wrap">
+        <div class="testi-track">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"The Goa villa was absolutely stunning. VoyageLuxe handled everything seamlessly — from recommendations to confirming the booking over WhatsApp."</p>
+            <div class="testi-author">
+              <div class="testi-av">PR</div>
+              <div><strong>Priya Raman</strong><small>Goa · Family trip</small></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Booked the Bali escape through VoyageLuxe — the villa was beyond expectations. The team was available on WhatsApp throughout our entire trip!"</p>
+            <div class="testi-author">
+              <div class="testi-av">RK</div>
+              <div><strong>Rohan Kulkarni</strong><small>Bali · Honeymoon</small></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Manali snow adventure was worth every rupee. The team helped us plan the entire trip and we got amazing activities at the best prices!"</p>
+            <div class="testi-author">
+              <div class="testi-av">SM</div>
+              <div><strong>Sneha Mehra</strong><small>Manali · Friends group</small></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"First time travelling internationally and VoyageLuxe made it completely stress-free. Dubai was magical! Will definitely book again."</p>
+            <div class="testi-author">
+              <div class="testi-av">AK</div>
+              <div><strong>Arjun Kumar</strong><small>Dubai · Couple</small></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p>"Coorg homestay was truly special. Woke up to mist, coffee and birdsong. VoyageLuxe found us a hidden gem we'd never have found ourselves."</p>
+            <div class="testi-author">
+              <div class="testi-av">ND</div>
+              <div><strong>Nisha Desai</strong><small>Coorg · Solo</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <span class="eyebrow">Let's Plan Together</span>
+          <h2>Ready for Your Next Adventure?</h2>
+          <p>Drop us a message and we'll get back within 2 hours. Or simply chat with us on WhatsApp — it's the fastest way.</p>
+
+          <div class="contact-cards">
+            <a href="https://wa.me/919035545910" target="_blank" class="contact-card wa">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div>
+                <strong>WhatsApp (Fastest)</strong>
+                <span>+91-9035545910</span>
+              </div>
+            </a>
+            <a href="https://wa.me/917349466798" target="_blank" class="contact-card wa">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div>
+                <strong>WhatsApp (Alternate)</strong>
+                <span>+91-7349466798</span>
+              </div>
+            </a>
+            <a href="mailto:contact.voyageluxe@gmail.com" class="contact-card email">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <strong>Email Us</strong>
+                <span>contact.voyageluxe@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact-card time">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Available</strong>
+                <span>8am – 10pm, Every Day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="contact-form-box">
+            <h3>Send an Enquiry</h3>
+            <div class="wa-note"><i class="fa-brands fa-whatsapp"></i> WhatsApp will open automatically on submit</div>
+            <form id="enquiryForm">
+              <div class="frow">
+                <div class="fg">
+                  <label>Your Name</label>
+                  <input type="text" name="name" placeholder="Priya Raman" required>
+                </div>
+                <div class="fg">
+                  <label>Phone</label>
+                  <input type="tel" name="phone" placeholder="+91 98765 43210" required>
+                </div>
+              </div>
+              <div class="fg">
+                <label>Destination</label>
+                <select name="destination" required>
+                  <option value="">Select destination…</option>
+                  <optgroup label="🇮🇳 India">
+                    <option>Goa</option><option>Coorg</option><option>Manali</option>
+                    <option>Kerala</option><option>Ooty</option><option>Kashmir</option>
+                  </optgroup>
+                  <optgroup label="✈️ International">
+                    <option>Bali</option><option>Singapore</option><option>Thailand</option>
+                    <option>Vietnam</option><option>Dubai</option><option>Japan</option><option>Hong Kong</option>
+                  </optgroup>
+                  <option>Other / Not sure yet</option>
+                </select>
+              </div>
+              <div class="frow">
+                <div class="fg">
+                  <label>Check-in Date</label>
+                  <input type="date" name="checkin">
+                </div>
+                <div class="fg">
+                  <label>Guests</label>
+                  <select name="guests">
+                    <option>1–2 guests</option>
+                    <option>3–5 guests</option>
+                    <option>6–10 guests</option>
+                    <option>10+ guests</option>
+                  </select>
+                </div>
+              </div>
+              <div class="fg">
+                <label>Message</label>
+                <textarea name="message" placeholder="Tell us about your trip — dates, budget, stay preference…"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="fa-brands fa-whatsapp"></i> Send Enquiry & Open WhatsApp
+              </button>
+              <div class="form-msg" id="formMsg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">✈ Voyage<em>Luxe</em></div>
+        <p>Handpicked stays across India and the world's most beautiful destinations.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/919035545910" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:contact.voyageluxe@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:+919035545910"><i class="fa-solid fa-phone"></i></a>
+          <a href="#instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>India</h4>
+        <ul>
+          <li><a href="#destinations">Goa</a></li>
+          <li><a href="#destinations">Coorg</a></li>
+          <li><a href="#destinations">Manali</a></li>
+          <li><a href="#destinations">Kerala</a></li>
+          <li><a href="#destinations">Ooty</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>International</h4>
+        <ul>
+          <li><a href="#destinations">Bali</a></li>
+          <li><a href="#destinations">Dubai</a></li>
+          <li><a href="#destinations">Thailand</a></li>
+          <li><a href="#destinations">Japan</a></li>
+          <li><a href="#destinations">Vietnam</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/919035545910" target="_blank">+91-9035545910</a></li>
+          <li><a href="https://wa.me/917349466798" target="_blank">+91-7349466798</a></li>
+          <li><a href="mailto:contact.voyageluxe@gmail.com">Email Us</a></li>
+          <li><a href="#instagram">Instagram</a></li>
+          <li><a href="#facebook">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 VoyageLuxe. All rights reserved. Made with ♥ in Bengaluru.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
